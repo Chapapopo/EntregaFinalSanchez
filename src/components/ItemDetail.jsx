@@ -16,7 +16,7 @@ const ItemDetail = ({ productos }) => {
         return (
           <div key={p.id}>
             <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={p.imagen} />
+              <Card.Img variant="top" src={p.image} />
               <Card.Body>
                 <Card.Title>{p.titulo}</Card.Title>
                 <Card.Text>
