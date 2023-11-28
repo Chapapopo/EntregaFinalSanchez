@@ -1,3 +1,5 @@
+/* CartWidget viene de NavBar y por ahora no hace nada 
+Esta Correcta*/
 import React from 'react'
 import Badge from 'react-bootstrap/Badge';
 

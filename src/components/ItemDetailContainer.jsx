@@ -1,10 +1,10 @@
-/* ItemListContainer Viene de App y va a ItemList */
+/* ItemDetailContainer viene de App y va a ItemDetail 
+Encargado de obtener un producto y se lo pasa a ItemDetail mediante props.*/
 import React from 'react'
-import ItemList from './ItemList';
-import { useParams } from 'react-router-dom';
+import ItemDetail from './ItemDetail'
 
-const ItemListContainer = () => {
-  const { categoria } = useParams()
+
+const ItemDetailContainer = () => {
   const ojotas = [
     { id: 1, titulo: "Top", descripcion: "Modelo base", precio: 5000, categoria: "Hombre", image: "images/productos/Top.webp" },
     { id: 2, titulo: "Slim", descripcion: "Modelo fino de mujer", precio: 5500, categoria: "Mujer", image: "images/productos/Slim.webp" },
@@ -30,17 +30,11 @@ const ItemListContainer = () => {
     .catch((error) => {
       console.log(error)
     })
-
-  const filtrarProductos = ojotas.filter((producto) => producto.categoria === categoria)
   return (
-    <div className='container'>
-      {console.log(categoria)}
-      <ItemList
-        productos={categoria === undefined ? ojotas : filtrarProductos}
-      />
-    </div>
-  );
-  
+    <>
+      <ItemDetail productos={ojotas}/>
+    </>
+  )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

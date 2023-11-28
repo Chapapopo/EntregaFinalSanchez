@@ -1,11 +1,11 @@
+/* ItemList viene de ItemListContainer y va a Item*/
 import React from 'react'
 import Item from './Item'
-import ojotas from '../data/ojotas'
 
-const ItemList = () => {
+const ItemList = ({ productos }) => {
     
-    const  ojotasList = ojotas.map(v =>{
-        return <div className="col-7 col-md-6 col-lg-4 mt-4"><Item Producto={v.titulo} Precio={v.precio} Imagen={v.image} Descripcion={v.descripcion}  Id={v.id}/></div>
+    const  ojotasList = productos.map(v =>{
+        return <div className="col-7 col-md-6 col-lg-4 mt-4"><Item Producto={v.titulo} Precio={v.precio} Imagen={v.image} Id={v.id}/></div>
     })
 
     return (

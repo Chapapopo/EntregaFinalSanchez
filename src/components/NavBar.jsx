@@ -1,3 +1,5 @@
+/* NavBar viene de App y solo tiene de salida CartWidget, que por ahora no Hace nada
+Esta Correcta*/
 import React from 'react'
 import CartWidget from './CartWidget'/* 
 import Button from 'react-bootstrap/Button'; */
@@ -24,9 +26,9 @@ export const NavBar = () => {
             navbarScroll
           >
             <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3"><Link to={"/Mujer"}>Mujer</Link></NavDropdown.Item>
-              <NavDropdown.Item href="#action4"><Link to={"/Hombre"}>Hombre</Link></NavDropdown.Item>
-              <NavDropdown.Item href="#action5"><Link to={"/Niño"}>Niño</Link></NavDropdown.Item>
+              <NavDropdown.Item href="#action1"><Link to={"/categoria/Mujer"}>Mujer</Link></NavDropdown.Item>
+              <NavDropdown.Item href="#action2"><Link to={"/categoria/Hombre"}>Hombre</Link></NavDropdown.Item>
+              <NavDropdown.Item href="#action3"><Link to={"/categoria/Niño"}>Niño</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form className="d-flex">
