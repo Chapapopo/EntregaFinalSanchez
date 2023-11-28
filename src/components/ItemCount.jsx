@@ -1,17 +1,16 @@
 /* ItemCount viene de ItemDetail */
-import React from 'react'/* 
-import Contador from '../hooks/Contador.js' */
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react'
+import useCounter from '../hooks/useCounter.js'
 
 const ItemCount = () => {
-  /* 
-  const {count, incrementar,decrementar} = Contador(0,2) */
-
+  const {counter, incrementar, decrementar} =useCounter(0,2)
   return (
-    <div>{/* 
-        <button onClick={incrementar}>+</button>
-        <p>{count}</p>
-        <button onClick={decrementar}>-</button> */}
-        contador
+    <div>
+      <Button bg="secondary" onClick={incrementar} >+</Button>
+      <Badge bg="secondary">{counter}</Badge>
+      <Button bg="secondary" onClick={decrementar} >-</Button>
     </div>
   )
 }
