@@ -7,7 +7,7 @@ const CartWidget = () => {
   return (
     <>
     <div>
-        <button><img src="images/logo/pngwing.com.png" alt="Logo" width="auto" height="50"/></button>
+        <button><img src="../../src/images/logo/pngwing.com.png" alt="Logo" width="auto" height="50"/></button>
     </div>
     <div>
         <Badge bg="danger">5</Badge>

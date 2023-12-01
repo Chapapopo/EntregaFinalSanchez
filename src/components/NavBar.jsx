@@ -16,7 +16,7 @@ export const NavBar = () => {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
         <Navbar.Brand href="#">
-        <Link to={"/"}><img src="images/logo/havaianas-logo-2-1-2048x404.png" alt="Logo" width="auto" height="50"/></Link>
+        <Link to={"/"}><img src="../../src/images/logo/havaianas-logo-2-1-2048x404.png" alt="Logo" width="auto" height="50"/></Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

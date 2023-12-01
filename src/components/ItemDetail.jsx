@@ -4,26 +4,22 @@ import React from 'react'
 import ItemCount from './ItemCount'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const ItemDetail = ({ productos }) => {
-  const { id } = useParams();
+const ItemDetail = ({ producto }) => {
 
-  const filtrarProductos = productos.filter((producto) => producto.id == id)
   return (
     <div className='container'>
-      {filtrarProductos.map((p) => {
-        return (
-          <div key={p.id}>
+          <div key={producto.id}>
             <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={p.image} />
+              <Card.Img variant="top" src={producto.image} />
               <Card.Body>
-                <Card.Title>{p.titulo}</Card.Title>
+                <Card.Title>{producto.titulo}</Card.Title>
                 <Card.Text>
-                  Descripcion: {p.descripcion}
+                  Descripcion: {producto.descripcion}
                 </Card.Text>
                 <Card.Text>
-                  Precio: {p.precio}
+                  Precio: {producto.precio}
                 </Card.Text>
                 <Card.Text>
                   <ItemCount />
@@ -32,8 +28,6 @@ const ItemDetail = ({ productos }) => {
               </Card.Body>
             </Card>
           </div>
-        )
-      })}
     </div>
   )
 }
