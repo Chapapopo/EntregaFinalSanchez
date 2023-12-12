@@ -4,8 +4,6 @@ import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { getFirestore, collection, query, where, getDocs } from "firebase/firestore"
 
-
-
 const ItemListContainer = () => {
 
   const { categoria } = useParams()
