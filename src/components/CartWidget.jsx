@@ -2,15 +2,16 @@
 Esta Correcta*/
 import React from 'react'
 import Badge from 'react-bootstrap/Badge';
+import { Link } from 'react-router-dom';
 
-const CartWidget = () => {
+const CartWidget = ({Agregados}) => {
   return (
     <>
     <div>
-        <button><img src="../../src/images/logo/pngwing.com.png" alt="Logo" width="auto" height="50"/></button>
+      <Link to={"/carrito"}><img src="../../src/images/logo/pngwing.com.png" alt="Logo" width="auto" height="50"/></Link>
     </div>
     <div>
-        <Badge bg="danger">5</Badge>
+        <Badge bg="danger">{Agregados}</Badge>
     </div>
     </>
   )
