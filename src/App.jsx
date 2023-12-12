@@ -19,22 +19,22 @@ function App() {
     return (
         <>
             <BrowserRouter>
-                <header>
-                    <NavBar />
-                </header>
-                <main>
-                    <ShoppingCartProvider>
+                <ShoppingCartProvider>
                     <UserProvider>
-                        <Routes>
-                            <Route exact path='/' element={<Home />} />
-                            <Route exact path='/categoria/:categoria' element={<ItemListContainer />} />
-                            <Route exact path='/item/:id' element={<ItemDetailContainer />} />
-                            <Route exact path='/carrito' element={<Carrito />} />
-                            <Route exact path='/finalizar' element={<Checkout />} />
-                        </Routes>
+                        <header>
+                            <NavBar />
+                        </header>
+                        <main>
+                            <Routes>
+                                <Route exact path='/' element={<Home />} />
+                                <Route exact path='/categoria/:categoria' element={<ItemListContainer />} />
+                                <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+                                <Route exact path='/carrito' element={<Carrito />} />
+                                <Route exact path='/finalizar' element={<Checkout />} />
+                            </Routes>
+                        </main>
                     </UserProvider>
-                    </ShoppingCartProvider>
-                </main>
+                </ShoppingCartProvider>
             </BrowserRouter>
         </>
     )

@@ -9,8 +9,8 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ producto }) => {
-  
-  const {cart, setCart} = useContext(CartContext)
+
+  const {cart, setCart, agregado, setAgregado} = useContext(CartContext)
   const [newProducto, setNewProducto] = useState({
     id: "", titulo: "", cantidad: 0, precio: 0
   })
@@ -28,10 +28,12 @@ const ItemDetail = ({ producto }) => {
       cantidad: cantidadSeleccionada,
       precio: producto.precio,
     };
+    const itemBruto = cantidadSeleccionada
 
     if (productoNuevo.id && productoNuevo.titulo && productoNuevo.cantidad && productoNuevo.precio) {
       setNewProducto(productoNuevo);
       setCart([...cart, productoNuevo]);
+      setAgregado(agregado + itemBruto)
     }
   };
   console.log(newProducto);
