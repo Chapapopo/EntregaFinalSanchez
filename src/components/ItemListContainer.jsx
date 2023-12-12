@@ -2,33 +2,38 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import ojotas from '../data/ojotas'
+import { getFirestore, collection, query, where, getDocs } from "firebase/firestore"
 
 
 
 const ItemListContainer = () => {
-  const { categoria } = useParams()
-  const [productos, setProductos] = useState([])/*  */
 
-  const getOjotas = new Promise((resolve, reject) => {
-    if (ojotas.length > 0) {
-      setTimeout(() => {
-        resolve(ojotas)
-      }, 2000)
-    } else {
-      reject(new Error("No hay datos"))
-    }
-  })
-  
+  const { categoria } = useParams()
+  const [productos, setProductos] = useState([])
+
   useEffect(() => {
-    getOjotas
-    .then((res) => {
-      const filtrarProductos = res.filter((producto) => producto.categoria === categoria)
-      setProductos(categoria === undefined ? res : filtrarProductos)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    const obtenerProductos = async () => {
+      try {
+
+        const db = getFirestore()
+
+        const itemCollection = collection(db, "ojotas")
+
+        let queryProducts = itemCollection;
+
+        if (categoria) {
+          queryProducts = query(itemCollection, where('categoria', '==', categoria));
+        }
+
+        const querySnapshot = await getDocs(queryProducts);
+        const productosData = querySnapshot.docs.map((doc) => doc.data());
+        setProductos(productosData);
+      } catch (error) {
+        console.error('Error al obtener datos:', error);
+      }
+    };
+
+    obtenerProductos();
   }, [categoria]);
 
   console.log(productos)

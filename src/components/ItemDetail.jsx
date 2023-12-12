@@ -14,7 +14,7 @@ const ItemDetail = ({ producto }) => {
   const [newProducto, setNewProducto] = useState({
     id: "", titulo: "", cantidad: 0, precio: 0
   })
-  
+
   const [cantidadSeleccionada, setCantidadSeleccionada] = useState(0);
 
   const agregarCantidad = (cantidad) => {
@@ -38,6 +38,9 @@ const ItemDetail = ({ producto }) => {
   };
   console.log(newProducto);
   console.log(cart);
+  console.log("aca")
+  console.log(producto)
+  console.log(producto.id)
 
   return (
     <div className='container'>
