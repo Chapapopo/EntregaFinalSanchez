@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react';
 import { CartContext } from './Context/ShoppingCardContext';
+import Card from 'react-bootstrap/Card';
 
 const CosasCarrito = () => {
     
@@ -12,11 +13,11 @@ const CosasCarrito = () => {
     return (
         <div className='container'>
             {cart.map((item) => (
-                <div key={item.id}>
-                    <p>Título: {item.titulo} Cantidad: {item.cantidad} Precio: {item.precio}</p>
-                </div>
+                <Card key={item.id}>
+                    <Card.Body>Título: {item.titulo} Cantidad: {item.cantidad} Precio: {item.precio}</Card.Body>
+                </Card>
             ))}
-            <div>Precio final: {total}</div>
+            <Card><Card.Body>Precio final: {total}</Card.Body></Card>
         </div>
     )
 }

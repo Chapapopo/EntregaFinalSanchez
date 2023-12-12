@@ -71,7 +71,7 @@ const ItemDetail = ({ producto }) => {
                 <Link><Button onClick={agregarAlCarrito} variant="primary">Agregar al carrito</Button></Link>
               </>
             ) : (
-              <Link to={`/finalizar`}><Button>Ir al Carrito</Button></Link>
+              <Link to={`/carrito`}><Button>Ir al Carrito</Button></Link>
             )}
           </Card.Body>
         </Card>

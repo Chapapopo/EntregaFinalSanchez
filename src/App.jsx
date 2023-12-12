@@ -13,6 +13,7 @@ import Checkout from './components/Checkout'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import UserProvider from './components/Context/UserContext'
 import ShoppingCartProvider from './components/Context/ShoppingCardContext'
+import Usuario from './components/Usuario'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
                                 <Route exact path='/item/:id' element={<ItemDetailContainer />} />
                                 <Route exact path='/carrito' element={<Carrito />} />
                                 <Route exact path='/finalizar' element={<Checkout />} />
+                                <Route exact path='/usuario' element={<Usuario />} />
                             </Routes>
                         </main>
                     </UserProvider>
